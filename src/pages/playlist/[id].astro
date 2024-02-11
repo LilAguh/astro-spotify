@@ -1,0 +1,26 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PlayListItemCard from '../../components/PlayListItemCard.astro'
+import { allPlaylists, playlists, songs } from '../../lib/data';
+
+const{ id } = Astro.params
+
+const playlist = allPlaylists.find(playlist => playlist.id === id)
+const playListSong = songs.filter((song) => song.albumId === playlist?.albumId)
+
+
+---
+
+<Layout title="Astro Spotify">
+	<div id="playlist-container"
+  class="relative transition-all duration-1000 bg-green-600">
+    <!-- <PageHeader/> -->
+    <div class="relative z-10 px-6 pt-10">
+      
+    </div>
+  </div>
+</Layout>
+
+<style>
+	
+</style>
